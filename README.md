@@ -11,5 +11,5 @@ On the workshop VMs all three are already set up.
 
 ## Labs
 
-0. [Terraform Basics](./0-basics/README.md)
+0. [OpenTofu Basics](./0-basics/README.md)
 1. [Modules](./1-modules/README.md)

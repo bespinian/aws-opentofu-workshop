@@ -2,7 +2,7 @@
 # doesn't change anything. We still declare it to make the intent explicit and
 # to keep it that way if someone loosens it by hand.
 #
-# > See: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block
+# > See: https://search.opentofu.org/provider/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block
 #
 resource "aws_s3_bucket_public_access_block" "self" {
   bucket                  = var.bucket_name
@@ -14,7 +14,7 @@ resource "aws_s3_bucket_public_access_block" "self" {
 
 # Versioning is off by default, so this is a change you can actually observe.
 #
-# > See: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning
+# > See: https://search.opentofu.org/provider/hashicorp/aws/latest/docs/resources/s3_bucket_versioning
 #
 resource "aws_s3_bucket_versioning" "self" {
   bucket = var.bucket_name

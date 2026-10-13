@@ -1,6 +1,6 @@
-# OpenTofu / Terraform Basics
+# OpenTofu Basics
 
-Here we cover the basics of OpenTofu / Terraform, such as:
+Here we cover the basics of OpenTofu, such as:
 
 * Variables and data types,
 * Providers,
