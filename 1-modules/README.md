@@ -14,8 +14,9 @@ Then run `tofu plan` and `tofu apply` as before.
 
 1. Run `tofu state list`. Resources inside a module are addressed with a `module.<name>.` prefix, e.g. `module.bucket.aws_s3_bucket.self`.
 2. Run `tofu state show module.configuration.aws_s3_bucket_versioning.self` to check that versioning is `Enabled`.
-3. The `bucket` module outputs `bucket_arn`, but the root module doesn't pass it on. Add a root `output` that does, and print it with `tofu output`.
-4. Use the `bucket` and `configuration` modules a second time to create another bucket (end its name with `-3` instead of `-2`). Run `tofu plan` and read the error: every new module call needs another `tofu init`.
+3. Run `tofu graph | grep module.bucket.output.bucket_name`. `tofu graph` prints the dependency graph, one `A -> B` line for every "A depends on B". Find the line where `module.configuration` depends on the `bucket` module's output.
+4. The `bucket` module outputs `bucket_arn`, but the root module doesn't pass it on. Add a root `output` that does, and print it with `tofu output`.
+5. Use the `bucket` and `configuration` modules a second time to create another bucket (end its name with `-3` instead of `-2`). Run `tofu plan` and read the error: every new module call needs another `tofu init`.
 
 ## Cleaning up
 
