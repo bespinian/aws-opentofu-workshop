@@ -25,5 +25,5 @@ module "bucket" {
 module "configuration" {
   source = "./configuration"
 
-  bucket_name = module.bucket.bucket_id
+  bucket_name = module.bucket.bucket_name
 }

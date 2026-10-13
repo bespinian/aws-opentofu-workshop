@@ -1,5 +1,5 @@
-output "bucket_id" {
-  description = "The ID of the newly created bucket"
+output "bucket_name" {
+  description = "The name of the newly created bucket"
   value       = aws_s3_bucket.self.bucket
 }
 
