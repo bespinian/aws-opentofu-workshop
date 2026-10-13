@@ -17,4 +17,4 @@ Then run `tofu plan` and `tofu apply` as before.
 
 ## Cleaning up
 
-Run `tofu destroy` when you're done to delete both buckets and their configuration.
+Run `tofu destroy` when you're done to delete all buckets and their configuration.
