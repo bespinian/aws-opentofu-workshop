@@ -1,0 +1,13 @@
+# Provider plugins and module cache, recreated by `tofu init`
+.terraform/
+
+# State can contain sensitive values and belongs to your own run only
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+
+# Local variable files often hold personal or secret values
+*.tfvars
+*.tfvars.json
+
+crash.log
