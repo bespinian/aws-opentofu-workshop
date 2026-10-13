@@ -1,6 +1,6 @@
-# AWS blocks public access on new buckets by default since April 2023, so this
-# doesn't change anything. We still declare it to make the intent explicit and
-# to keep it that way if someone loosens it by hand.
+# Since April 2023, AWS blocks public access on new buckets by default, so this
+# doesn't change anything yet. We still set it to make clear that the bucket
+# must stay private, and so OpenTofu undoes it if someone changes it by hand.
 #
 # > See: https://search.opentofu.org/provider/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block
 #

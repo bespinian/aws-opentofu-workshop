@@ -1,6 +1,7 @@
 resource "aws_s3_bucket" "self" {
-  # We use string-interpolation because the bucket name has to be globally-unique:
-  # the account ID separates accounts, your name separates you from the others in it
+  # Bucket names must be unique across all of AWS. `${...}` puts values into the
+  # name: the account ID keeps it apart from other accounts, and your name keeps
+  # it apart from the other participants in this account.
   bucket = "tofu-${var.participant}-${data.aws_caller_identity.current.account_id}"
 
   # Lets `tofu destroy` delete the bucket even if it still holds objects (or,

@@ -1,22 +1,25 @@
 # Modules
 
-In this section, we cover modules. There is one that creates an S3 bucket (`bucket`) and one that configures (`configuration`) it. The module that configures the bucket restricts public access to the bucket and turns on versioning.
+In this lab, we use modules. A module is a directory of `.tf` files that you can use from other configurations, a bit like a function. There are two here:
 
-The `configuration` module gets its bucket name from `module.bucket.bucket_name`, an output of the `bucket` module. That reference is all OpenTofu needs to know that the bucket must exist before it can be configured, so it creates the bucket first. You don't need to declare the order yourself.
+* `bucket` creates an S3 bucket.
+* `configuration` blocks public access to the bucket and turns on versioning.
+
+The `configuration` module gets the bucket name from `module.bucket.bucket_name`, an output of the `bucket` module. Because of this reference, OpenTofu knows that it has to create the bucket first. You don't have to set the order yourself.
 
 ## Getting started
 
-This is a new root module, so run `tofu init` here before anything else. Besides the provider, it also installs the local modules `./bucket` and `./configuration`.
+This is a new directory, so run `tofu init` here first. Besides the provider, it also installs the modules in `./bucket` and `./configuration`.
 
 Then run `tofu plan` and `tofu apply` as before.
 
 ## Exercises
 
-1. Run `tofu state list`. Resources inside a module are addressed with a `module.<name>.` prefix, e.g. `module.bucket.aws_s3_bucket.self`.
-2. Run `tofu state show module.configuration.aws_s3_bucket_versioning.self` to check that versioning is `Enabled`.
-3. Run `tofu graph | grep module.bucket.output.bucket_name`. `tofu graph` prints the dependency graph, one `A -> B` line for every "A depends on B". Find the line where `module.configuration` depends on the `bucket` module's output.
-4. The `bucket` module outputs `bucket_arn`, but the root module doesn't pass it on. Add a root `output` that does, and print it with `tofu output`.
-5. Use the `bucket` and `configuration` modules a second time to create another bucket (end its name with `-3` instead of `-2`). Run `tofu plan` and read the error: every new module call needs another `tofu init`.
+1. Run `tofu state list`. Resources inside a module start with `module.<name>.`, e.g. `module.bucket.aws_s3_bucket.self`.
+2. Run `tofu state show module.configuration.aws_s3_bucket_versioning.self` and check that versioning is `Enabled`.
+3. Run `tofu graph | grep module.bucket.output.bucket_name`. `tofu graph` prints one `A -> B` line for every "A depends on B". Find the line that shows that `module.configuration` depends on the output of the `bucket` module.
+4. The `bucket` module has a `bucket_arn` output, but you can't see it yet. Add an `output` block to `main.tf` that passes it on, apply, and print it with `tofu output`.
+5. Create a second bucket: copy both `module` blocks in `main.tf` and name the copies `bucket_3` and `configuration_3`. End the bucket name with `-3` instead of `-2`, and let `configuration_3` use `module.bucket_3.bucket_name`. Run `tofu plan` and read the error: every new `module` block needs another `tofu init`. Run it, then apply.
 
 ## Cleaning up
 

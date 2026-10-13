@@ -18,7 +18,7 @@ data "aws_caller_identity" "current" {}
 module "bucket" {
   source = "./bucket"
 
-  # Specify the variables/inputs of this module
+  # The inputs of the module, as declared in ./bucket/variables.tf
   bucket_name = "tofu-${var.participant}-${data.aws_caller_identity.current.account_id}-2"
 }
 
