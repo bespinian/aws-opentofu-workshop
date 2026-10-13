@@ -5,7 +5,7 @@ Here we cover the basics of OpenTofu, such as:
 * Variables and data types,
 * Providers,
 * Resources and
-* Data blocks
+* Data sources
 
 ## Getting started
 
