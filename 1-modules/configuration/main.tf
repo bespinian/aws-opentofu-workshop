@@ -3,7 +3,6 @@
 # must stay private, and so OpenTofu undoes it if someone changes it by hand.
 #
 # > See: https://search.opentofu.org/provider/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block
-#
 resource "aws_s3_bucket_public_access_block" "self" {
   bucket                  = var.bucket_name
   block_public_acls       = true
@@ -15,7 +14,6 @@ resource "aws_s3_bucket_public_access_block" "self" {
 # Versioning is off by default, so this is a change you can actually observe.
 #
 # > See: https://search.opentofu.org/provider/hashicorp/aws/latest/docs/resources/s3_bucket_versioning
-#
 resource "aws_s3_bucket_versioning" "self" {
   bucket = var.bucket_name
 
