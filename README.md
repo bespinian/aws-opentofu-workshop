@@ -14,7 +14,7 @@ On the workshop VMs all three are already set up.
 
 ## Labs
 
-0. [OpenTofu Basics](./0-basics/README.md)
-1. [Modules](./1-modules/README.md)
-2. [Loops](./2-loops/README.md)
-3. [Remote State](./3-remote-state/README.md)
+0. [OpenTofu Basics](./0-basics/)
+1. [Modules](./1-modules/)
+2. [Loops](./2-loops/)
+3. [Remote State](./3-remote-state/)
