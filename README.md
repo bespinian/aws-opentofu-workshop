@@ -13,3 +13,4 @@ On the workshop VMs all three are already set up.
 
 0. [OpenTofu Basics](./0-basics/README.md)
 1. [Modules](./1-modules/README.md)
+2. [Loops](./2-loops/README.md)
