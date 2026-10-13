@@ -2,6 +2,8 @@
 
 In this section, we cover modules. There is one that creates an S3 bucket (`bucket`) and one that configures (`configuration`) it. The module that configures the bucket restricts public access to the bucket and turns on versioning.
 
+The `configuration` module gets its bucket name from `module.bucket.bucket_name`, an output of the `bucket` module. That reference is all OpenTofu needs to know that the bucket must exist before it can be configured, so it creates the bucket first. You don't need to declare the order yourself.
+
 ## Getting started
 
 This is a new root module, so run `tofu init` here before anything else. Besides the provider, it also installs the local modules `./bucket` and `./configuration`.
