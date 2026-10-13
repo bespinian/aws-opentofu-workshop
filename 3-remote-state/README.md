@@ -32,7 +32,7 @@ The part in `$( )` reads the `bucket_name` output of `state-bucket`. After that,
 
 1. Run `ls` in `app`. There's no `terraform.tfstate` file. Run `tofu state pull` to print the state, which OpenTofu downloads from S3.
 2. Delete the `.terraform` directory in `app` and run the `tofu init` command from above again. A colleague would do the same on their machine. Then run `tofu plan`. It shows no changes, because the state was in S3 all along.
-3. Open a second terminal and go to the `app` directory. On your own machine, run `export TF_VAR_participant=...` there too. Run `tofu apply` in the first terminal, but don't answer its question yet. Run `tofu plan` in the second terminal. It fails with `Error acquiring the state lock`, because the first terminal holds the lock. Answer `no` in the first terminal, and `tofu plan` works again.
+3. Open a second terminal and go to the `app` directory. On your own machine, run `export TF_VAR_participant=...` there too. Change the `Name` tag in `bucket.tf`, because `tofu apply` only asks its question if there's something to change. Run `tofu apply` in the first terminal, but don't answer its question yet. Run `tofu plan` in the second terminal. It fails with `Error acquiring the state lock`, because the first terminal holds the lock. Answer `no` in the first terminal, and `tofu plan` works again.
 4. Move the state back to your machine: comment out the `backend "s3"` block in `main.tf` and run `tofu init -migrate-state`. Answer `yes`. There's a `terraform.tfstate` file in `app` again. Then remove the comments and run the `tofu init` command from above with `-migrate-state` at the end to move the state back to S3. Answer `yes` to every question.
 
 ## Cleaning up
