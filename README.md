@@ -3,7 +3,7 @@
 ## Prerequisites
 
 * Configured AWS credentials
-* [OpenTofu](https://opentofu.org/docs/intro/install/) on your machine 
+* [OpenTofu](https://opentofu.org/docs/intro/install/) on your machine
 * Your name for the `participant` variable, which keeps your bucket names apart
   from everyone else's: `export TF_VAR_participant=anna-mueller`
 
