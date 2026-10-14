@@ -2,8 +2,8 @@
 
 In this lab, we use modules. A module is a directory of `.tf` files that you can use from other configurations, a bit like a function. There are two here:
 
-* `bucket` creates an S3 bucket.
-* `configuration` blocks public access to the bucket and turns on versioning.
+- `bucket` creates an S3 bucket.
+- `configuration` blocks public access to the bucket and turns on versioning.
 
 The `configuration` module gets the bucket name from `module.bucket.bucket_name`, an output of the `bucket` module. Because of this reference, OpenTofu knows that it has to create the bucket first. You don't have to set the order yourself.
 

@@ -2,10 +2,10 @@
 
 In this lab, we cover the basics of OpenTofu:
 
-* Variables and data types
-* Providers
-* Resources
-* Data sources
+- Variables and data types
+- Providers
+- Resources
+- Data sources
 
 ## Getting started
 

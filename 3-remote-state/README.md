@@ -4,8 +4,8 @@ So far, OpenTofu kept its state in a `terraform.tfstate` file in the lab directo
 
 In this lab, we keep the state in an S3 bucket instead. There are two directories:
 
-* `state-bucket` creates the bucket for the state. Its own state stays on your machine, because it can't be stored in a bucket that doesn't exist yet.
-* `app` creates a bucket like in lab 0, but keeps its state in the state bucket.
+- `state-bucket` creates the bucket for the state. Its own state stays on your machine, because it can't be stored in a bucket that doesn't exist yet.
+- `app` creates a bucket like in lab 0, but keeps its state in the state bucket.
 
 The state bucket has versioning turned on, so S3 keeps every old version of the state. If the state ever breaks, you can go back to an earlier one.
 
