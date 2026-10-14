@@ -11,6 +11,12 @@ The state bucket has versioning turned on, so S3 keeps every old version of the 
 
 ## Getting started
 
+Open a terminal in the root of this repository and go to this lab's directory:
+
+```sh
+cd 3-remote-state
+```
+
 First, create the state bucket:
 
 ```sh

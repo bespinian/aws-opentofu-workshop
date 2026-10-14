@@ -9,6 +9,12 @@ In this lab, we cover the basics of OpenTofu:
 
 ## Getting started
 
+Open a terminal in the root of this repository and go to this lab's directory:
+
+```sh
+cd 0-basics
+```
+
 Run `tofu init` once in this directory. It downloads the AWS provider and writes a lock file that records its exact version.
 
 Run `tofu plan` to see what OpenTofu would change. If you're happy with that, run `tofu apply` to create the bucket. OpenTofu writes down what it created in a state file, `terraform.tfstate`.

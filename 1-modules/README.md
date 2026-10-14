@@ -9,6 +9,12 @@ The `configuration` module gets the bucket name from `module.bucket.bucket_name`
 
 ## Getting started
 
+Open a terminal in the root of this repository and go to this lab's directory:
+
+```sh
+cd 1-modules
+```
+
 This is a new directory, so run `tofu init` here first. Besides the provider, it also installs the modules in `./bucket` and `./configuration`.
 
 Then run `tofu plan` and `tofu apply` as before.

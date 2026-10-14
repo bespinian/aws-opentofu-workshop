@@ -8,6 +8,12 @@ OpenTofu also has `count`. It numbers the copies `[0]`, `[1]`, `[2]`, and so on.
 
 ## Getting started
 
+Open a terminal in the root of this repository and go to this lab's directory:
+
+```sh
+cd 2-loops
+```
+
 Run `tofu init` here. Then run `tofu plan` and `tofu apply` as before.
 
 ## Exercises
