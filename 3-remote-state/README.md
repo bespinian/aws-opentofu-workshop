@@ -43,10 +43,9 @@ The part in `$( )` reads the `bucket_name` output of `state-bucket`. After that,
 
 ## Cleaning up
 
-Delete `app` first, because its state lives in the state bucket:
+Delete `app` first, because its state lives in the state bucket. In `app`, run:
 
 ```sh
-cd app
 tofu destroy
 cd ../state-bucket
 tofu destroy

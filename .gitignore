@@ -1,5 +1,6 @@
-# Provider plugins and module cache, recreated by `tofu init`
+# Provider plugins, module cache and provider lock file, recreated by `tofu init`
 .terraform/
+.terraform.lock.hcl
 
 # State can contain sensitive values and belongs to your own run only
 *.tfstate
